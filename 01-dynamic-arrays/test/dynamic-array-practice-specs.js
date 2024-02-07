@@ -10,10 +10,7 @@ describe('Dynamic array', () => {
   let noUnshiftSpy = chai.spy.on(Array.prototype, "unshift");
 
   beforeEach(function () {
-    
     dynamicArr = new DynamicArray();
-
-
   });
 
   it('has data, capacity and length properties', () => {
@@ -24,8 +21,6 @@ describe('Dynamic array', () => {
     expect(dynamicArr.data.length).to.deep.equal(4);
 
   });
-
-
   it('can be initialized to different size', function () {
 
     dynamicArr = new DynamicArray(8);
@@ -35,19 +30,13 @@ describe('Dynamic array', () => {
     expect(dynamicArr.data.length).to.deep.equal(8);
 
   });
-
-
   it('can read values in the array', function () {
-
     dynamicArr.data[0] = 99;
     dynamicArr.length = 1;
 
     expect(dynamicArr.read(0)).to.equal(99);
     expect(dynamicArr.read(1)).to.equal(undefined);
   });
-
-
-
   it('can add values to the front using unshift', function () {
 
     expect(dynamicArr.length).to.equal(0);
